@@ -3,11 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/charactersListFragment">
+    app:startDestination="@id/CandyListFragment">
 
     <fragment
-        android:id="@+id/charactersListFragment"
-        android:name="com.karis.networkboundresource.ui.fragments.CharactersListFragment"
+        android:id="@+id/CandyListFragment"
+        android:name="com.karis.networkboundresource.ui.fragments.candylist.CandyListFragment"
         android:label="fragment_characters_list"
-        tools:layout="@layout/fragment_characters_list" />
+        tools:layout="@layout/fragment_candylist" >
+        <action
+            android:id="@+id/charactersList_to_candyDetails"
+            app:destination="@id/candyDetailsFragment" />
+        <argument
+            android:name="candyitem"
+            app:argType="com.karis.networkboundresource.models.CandyItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/candyDetailsFragment"
+        android:name="com.karis.networkboundresource.ui.fragments.candyDetails.CandyDetailsFragment"
+        android:label="CandyDetailsFragment" >
+        <argument
+            android:name="candyitem"
+            app:argType="com.karis.networkboundresource.models.CandyItem" />
+    </fragment>
 </navigation>

@@ -1,11 +1,11 @@
 package com.karis.networkboundresource.data.network
 
-import com.karis.networkboundresource.models.Response
+import com.karis.networkboundresource.models.CandyItem
 import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("character")
-    suspend fun getCharacters() : Response
+    @GET("api/")
+    suspend fun getCandy() : List<CandyItem>
 
 }

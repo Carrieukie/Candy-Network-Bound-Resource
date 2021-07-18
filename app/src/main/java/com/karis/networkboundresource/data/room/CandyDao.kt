@@ -4,20 +4,20 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.karis.networkboundresource.models.Response
+import com.karis.networkboundresource.models.CandyItem
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface CharactersDao {
+interface CandyDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(response: Response)
+    suspend fun insertCandy(candyItem: List<CandyItem>)
 
-    @Query("SELECT * FROM response")
-    fun getWeather() : Flow<Response>
+    @Query("SELECT * FROM candy")
+    fun getCandy() : Flow<List<CandyItem>>
 
-    @Query("DELETE FROM response")
-    fun deleteAllWeather()
+    @Query("DELETE FROM candy")
+    fun deleteAllCandy()
 
 
 }

@@ -16,19 +16,21 @@ class MainRepository @Inject constructor(
     private val weatherDao = database.charactersDao()
 
     fun getCharacters() = networkBoundResource(
-
         query = {
-            weatherDao.getWeather()
+            weatherDao.getCandy()
         },
         fetch = {
             delay(2000)
-            apiService.getCharacters()
+            apiService.getCandy()
         },
-        saveFetchResult = { characters ->
+        saveFetchResult = { candys ->
             database.withTransaction {
-                weatherDao.deleteAllWeather()
-                weatherDao.insert(characters)
+                weatherDao.deleteAllCandy()
+                weatherDao.insertCandy(candys)
             }
+        },
+        shouldFetch = {candys ->
+            candys.isNotEmpty()
         }
     )
 
