@@ -1,6 +1,30 @@
 # Network-Bound-Resource
 
 ## Description
+### Tech-stack
+
+* Tech-stack
+    * [Kotlin](https://kotlinlang.org/) - a cross-platform, statically typed, general-purpose programming language with type inference.
+    * [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - perform background operations.
+    * [Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html) - handle the stream of data asynchronously that executes sequentially.
+    * [KOIN](https://insert-koin.io/) - a pragmatic lightweight dependency injection framework.
+    * [Jetpack](https://developer.android.com/jetpack)
+        * [Room](https://developer.android.com/topic/libraries/architecture/room) - a persistence library provides an abstraction layer over SQLite.
+        * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - is an observable data holder.
+        * [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - perform action when lifecycle state changes.
+        * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - store and manage UI-related data in a lifecycle conscious way.
+
+* Architecture
+    * Clean Architecture
+    * MVVM - Model View View Model
+`
+* Gradle
+    * Plugins
+        * [Ktlint](https://github.com/JLLeitschuh/ktlint-gradle) - creates convenient tasks in your Gradle project that run ktlint checks or do code auto format.
+        * [Detekt](https://github.com/detekt/detekt) - a static code analysis tool for the Kotlin programming language.
+        * [Spotless](https://github.com/diffplug/spotless) - format java, groovy, markdown and license headers using gradle.
+        * [Dokka](https://github.com/Kotlin/dokka) - a documentation engine for Kotlin, performing the same function as javadoc for Java.
+        * [jacoco](https://github.com/jacoco/jacoco) - a Code Coverage Library
 
 ## Uses
 
