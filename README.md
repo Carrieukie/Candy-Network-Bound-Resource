@@ -181,6 +181,5 @@ class MainRepository @Inject constructor(
       <img src="https://github.com/Carrieukie/Candy/blob/main/assets/secondfetchrequired.gif" width="320"/>
 
 
- 
-
+ # I hope you loved this 
 
