@@ -1,4 +1,6 @@
+# Candy
 
+A relatively small and simple application that consumes this [api](https://vast-brushlands-23089.herokuapp.com/main/api/) which contains a list of candies and their prices. I built this demo following the MVVM architecture, Kotlin Flows, (Uni-directional data flow), dagger hilt, viewmodel, Room and Kotlin coroutines.
 
 ## Network-Bound-Resource algorithm
 
@@ -19,7 +21,7 @@ You can easily achieve the above use cases using this algorithm, by making just 
     * [Kotlin](https://kotlinlang.org/) - a cross-platform, statically typed, general-purpose programming language with type inference.
     * [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - perform background operations.
     * [Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html) - handle the stream of data asynchronously that executes sequentially.
-    * [KOIN](https://insert-koin.io/) - a pragmatic lightweight dependency injection framework.
+    * [Dagger hilt](https://dagger.dev/hilt/) - a pragmatic lightweight dependency injection framework.
     * [Jetpack](https://developer.android.com/jetpack)
         * [Room](https://developer.android.com/topic/libraries/architecture/room) - a persistence library provides an abstraction layer over SQLite.
         * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - is an observable data holder.
@@ -87,6 +89,79 @@ inline fun <ResultType, RequestType> networkBoundResource(
     emitAll(resource)
 }
 
+* Explanation 
+
+  GENERIC FUNCTION
+  This is a generic function and that means it can work with any type of data,
+  ResultType is the data type loaded the local cache. Can be any thing, a list or any object.
+  RequestType is the data type loaded from the network. Can be any thing, a list or any object.
+ 
+  ARGUMENT PARAMETERS
+  This function takes in four argument parameters which are functions
+ 
+  NOTE!!! -> all the paramEters are function implementations of the following pieces of logic
+ 
+  @param query
+  @return Flow<ResultType>
+  pass in a function that loads data from your local cache and returns a flow of your specified data type <ResultType>
+ 
+  @param fetch
+  @return <RequestType>
+  pass in a function, a suspend function, that loads data from your rest api and returns an object of <RequestType>
+ 
+  @param saveFetchResult
+  @return Unit
+  pass in a function that just takes in <RequestType> (The data type got from the network) and saves it in the local cache.
+ 
+  @param
+  @return Boolean
+  pass in a function that has the logic to whether the algorithm should make a networking call or not.
+  In this case, this function takes in data loaded from @param query and determines whether to make a networking call or not.
+  This can vary with your implementation however, say fetch depending on the last time you made a networking call....e.t.c.
+ 
+
 ```
+
+### The repository
+
+``` Kotlin
+
+
+class MainRepository @Inject constructor(
+    private val database: Appdatabase,
+    private val apiService : ApiService,
+) {
+
+    private val weatherDao = database.charactersDao()
+
+    fun getCandys() = networkBoundResource(
+        // pass in the logic to query data from the database
+        query = {
+            weatherDao.getCandy()
+        },
+        // pass in the logic to fetch data from the api
+        fetch = {
+            delay(2000)
+            apiService.getCandy()
+        },
+
+        //pass in the logic to save the result to the local cache
+        saveFetchResult = { candys ->
+            database.withTransaction {
+                weatherDao.deleteAllCandy()
+                weatherDao.insertCandy(candys)
+            }
+        },
+
+        //pass in the logic to determine if the networking call should be made
+        shouldFetch = {candys ->
+            candys.isEmpty()
+        }
+    )
+    
+}
+    
+ ```
+ 
 
 
