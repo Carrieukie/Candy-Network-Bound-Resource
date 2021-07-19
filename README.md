@@ -2,8 +2,8 @@
 
 ## Description
 
-This function provides an easy interface to fetch resource from both the database and the network. Depending on your needs, you can easiy tweek it to: 
-  Either always fetch data fromying the network whilst displaying data from the cache as placeholder data. 
+* This function provides an easy interface to fetch resource from both the database and the network. Depending on your needs, you can easiy tweek it to: 
+*   Either always fetch data fromying the network whilst displaying data from the cache as placeholder data. 
     It is normally a good idea to prevent a user from looking at a blank loading screen.
   Just display data from the cache and not make a network request if there's any data in the cache.
     Say data from your rest api is static, you only wanna load it once, if and only if there's no data in database.
