@@ -100,7 +100,7 @@ inline fun <ResultType, RequestType> networkBoundResource(
    * This function takes in four argument parameters which are functions.
  
   ### query
-   * pass in a function that loads data from your local cache and returns a flow of your specified data type <ResultType>
+   * This is a function that loads data from your local cache and returns a flow of your specified data type <ResultType>
    * This function returns a Flow<ResultType>
    
   ### fetch
