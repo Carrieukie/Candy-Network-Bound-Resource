@@ -88,6 +88,7 @@ inline fun <ResultType, RequestType> networkBoundResource(
     //Emit the resource variable
     emitAll(resource)
 }
+```
 
 * Explanation 
 
@@ -119,8 +120,6 @@ inline fun <ResultType, RequestType> networkBoundResource(
   In this case, this function takes in data loaded from @param query and determines whether to make a networking call or not.
   This can vary with your implementation however, say fetch depending on the last time you made a networking call....e.t.c.
  
-
-```
 
 ### The repository
 
