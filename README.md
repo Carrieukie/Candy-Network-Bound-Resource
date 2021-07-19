@@ -164,12 +164,18 @@ class MainRepository @Inject constructor(
  ```
 
 ## Demo
-   * When shouldfetch returns true because there's no data in the local cache. Device has internet connection.
+   * When the app is first launched. Shouldfetch returns true because there's no data in the local cache. Device has internet connection. Makes a network call and caches the data in the device.
    
    <img src="https://github.com/Carrieukie/Candy/blob/main/assets/first_time.gif" width="320"/>
 
-   * When shouldfetch returns false because there's  data in the local cache. Device has internet connection.
-   * When shouldfetch returns false because there's  data in the local cache. When there's no internet connection. Data is loaded from cache.
+   * When device is launched the second time. Shouldfetch returns false because there's data in the local cache. Device has internet connection.
+   
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/second_time.gif" width="320"/>
+
+   * When the device does not have an internet connection. shouldfetch returns false because there's data in the local cache. Device has no internet connection.
+   
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/airplane_mode.gif" width="320"/>
+
  
 
 
