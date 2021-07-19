@@ -91,7 +91,7 @@ inline fun <ResultType, RequestType> networkBoundResource(
 ```
 ## Explanation 
 
-  ### This is a generic
+  ### This is a generic function
   * This is a generic function and that means it can work with any type of data,
   * ResultType is the data type loaded the local cache. Can be any thing, a list or any object.
   * RequestType is the data type loaded from the network. Can be any thing, a list or any object.
@@ -178,7 +178,7 @@ class MainRepository @Inject constructor(
    
    * When your logic requires the app re-do the network request, even though you have data already cached in the db. The data cached is displayed as a placeholder, while data is being loaded.
    
-         <img src="https://github.com/Carrieukie/Candy/blob/main/assets/secondfetchrequired.gif" width="320"/>
+   <img src="https://github.com/Carrieukie/Candy/blob/main/assets/secondfetchrequired.gif" width="320"/>
 
 
  
