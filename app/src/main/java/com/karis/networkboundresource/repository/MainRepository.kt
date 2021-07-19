@@ -15,7 +15,7 @@ class MainRepository @Inject constructor(
 
     private val weatherDao = database.charactersDao()
 
-    fun getCharacters() = networkBoundResource(
+    fun getCandys() = networkBoundResource(
         // pass in the logic to query data from the database
         query = {
             weatherDao.getCandy()
@@ -39,6 +39,5 @@ class MainRepository @Inject constructor(
             candys.isEmpty()
         }
     )
-
 
 }

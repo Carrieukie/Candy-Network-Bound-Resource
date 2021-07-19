@@ -9,6 +9,6 @@ import javax.inject.Inject
 @HiltViewModel
 class CandyListViewModel @Inject constructor(mainRepository: MainRepository) : ViewModel(){
 
-    val characters = mainRepository.getCharacters().asLiveData()
+    val characters = mainRepository.getCandys().asLiveData()
 
 }

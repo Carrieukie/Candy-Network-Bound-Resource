@@ -2,6 +2,7 @@ package com.karis.networkboundresource.utils
 
 import kotlinx.coroutines.flow.*
 
+
 /**
  * GENERIC TYPES
  * This is a generic function and that means it can work with any type of data,
