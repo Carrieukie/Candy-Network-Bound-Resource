@@ -1,7 +1,9 @@
-# Network-Bound-Resource
 
-* This function provides an easy interface to fetch resource from both the database and the network. Depending on your needs, you can easiy tweek it to: 
-    * Either always fetch data fromying the network whilst displaying data from the cache as placeholder data. 
+
+## Network-Bound-Resource algorithm
+
+* The network bound resource is an algorithm that provides an easy function to fetch resource from both the database and the network. Depending on your needs, you can either :
+    * Always fetch data from your api but display data from your cache as placeholder data as the network operation is going on. 
         - It is normally a good idea to prevent a user from looking at a blank loading screen.
     * Just display data from the cache and not make a network request if there's any data in the cache.
         - You only wanna load data from your api once, if and only if there's no data in the cache.
@@ -9,6 +11,8 @@
 You can easily achieve the above use cases using this algorithm, by making just a few adjustments. It works well with the Android architecture component. 
 
 ## Description
+* This simple application 
+
 ### Tech-stack
 
 * Tech-stack
