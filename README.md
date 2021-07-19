@@ -175,6 +175,11 @@ class MainRepository @Inject constructor(
    * When the device does not have an internet connection. shouldfetch returns false because there's data in the local cache. Device has no internet connection.
    
       <img src="https://github.com/Carrieukie/Candy/blob/main/assets/airplane_mode.gif" width="320"/>
+   
+   * When your logic requires the app re-do the network request, even though you have data already cached in the db. The data cached is displayed as a placeholder, while data is being loaded.
+   
+         <img src="https://github.com/Carrieukie/Candy/blob/main/assets/secondfetchrequired.gif" width="320"/>
+
 
  
 
