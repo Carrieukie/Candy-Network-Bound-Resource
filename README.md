@@ -2,17 +2,23 @@
 
 ## Description
 
+## Uses
+
 * This function provides an easy interface to fetch resource from both the database and the network. Depending on your needs, you can easiy tweek it to: 
     * Either always fetch data fromying the network whilst displaying data from the cache as placeholder data. 
         - It is normally a good idea to prevent a user from looking at a blank loading screen.
     *Just display data from the cache and not make a network request if there's any data in the cache.
-        - Say data from your rest api is static, you only wanna load it once, if and only if there's no data in database.
+        - You only wanna load data from your api once, if and only if there's no data in the cache.
+    
 You can easily achieve the above use cases using this algorithm, by making just a few adjustments. It works well with the Android architecture component. 
 
-Enough talking, let's jump into the code.
+## 
+
+## Code
+
+### Network Bound Resource
 
 ```kotlin
-
 inline fun <ResultType, RequestType> networkBoundResource(
     crossinline query: () -> Flow<ResultType>,
     crossinline fetch: suspend () -> RequestType,
