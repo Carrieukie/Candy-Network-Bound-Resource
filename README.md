@@ -166,7 +166,7 @@ class MainRepository @Inject constructor(
 ## Demo
    * When the app is first launched. Shouldfetch returns true because there's no data in the local cache. Device has internet connection. Makes a network call and caches the data in the device.
    
-   <img src="https://github.com/Carrieukie/Candy/blob/main/assets/first_time.gif" width="320"/>
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/first_time.gif" width="320"/>
 
    * When device is launched the second time. Shouldfetch returns false because there's data in the local cache. Device has internet connection.
    
@@ -178,7 +178,7 @@ class MainRepository @Inject constructor(
    
    * When your logic requires the app re-do the network request, even though you have data already cached in the db. The data cached is displayed as a placeholder, while data is being loaded.
    
-   <img src="https://github.com/Carrieukie/Candy/blob/main/assets/secondfetchrequired.gif" width="320"/>
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/secondfetchrequired.gif" width="320"/>
 
 
  
