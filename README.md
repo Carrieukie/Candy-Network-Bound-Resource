@@ -169,7 +169,11 @@ class MainRepository @Inject constructor(
    <img src="https://github.com/Carrieukie/Candy/blob/main/assets/first_time.gif" width="320"/>
 
    * When shouldfetch returns false because there's  data in the local cache. Device has internet connection.
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/second_time.gif" width="320"/>
+
    * When shouldfetch returns false because there's  data in the local cache. When there's no internet connection. Data is loaded from cache.
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/airplane_mode.gif" width="320"/>
+
  
 
 
