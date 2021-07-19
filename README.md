@@ -1,5 +1,13 @@
 # Network-Bound-Resource
 
+* This function provides an easy interface to fetch resource from both the database and the network. Depending on your needs, you can easiy tweek it to: 
+    * Either always fetch data fromying the network whilst displaying data from the cache as placeholder data. 
+        - It is normally a good idea to prevent a user from looking at a blank loading screen.
+    * Just display data from the cache and not make a network request if there's any data in the cache.
+        - You only wanna load data from your api once, if and only if there's no data in the cache.
+    
+You can easily achieve the above use cases using this algorithm, by making just a few adjustments. It works well with the Android architecture component. 
+
 ## Description
 ### Tech-stack
 
@@ -25,18 +33,6 @@
         * [Spotless](https://github.com/diffplug/spotless) - format java, groovy, markdown and license headers using gradle.
         * [Dokka](https://github.com/Kotlin/dokka) - a documentation engine for Kotlin, performing the same function as javadoc for Java.
         * [jacoco](https://github.com/jacoco/jacoco) - a Code Coverage Library
-
-## Uses
-
-* This function provides an easy interface to fetch resource from both the database and the network. Depending on your needs, you can easiy tweek it to: 
-    * Either always fetch data fromying the network whilst displaying data from the cache as placeholder data. 
-        - It is normally a good idea to prevent a user from looking at a blank loading screen.
-    *Just display data from the cache and not make a network request if there's any data in the cache.
-        - You only wanna load data from your api once, if and only if there's no data in the cache.
-    
-You can easily achieve the above use cases using this algorithm, by making just a few adjustments. It works well with the Android architecture component. 
-
-## 
 
 ## Code
 
