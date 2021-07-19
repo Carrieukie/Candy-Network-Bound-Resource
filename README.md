@@ -92,32 +92,30 @@ inline fun <ResultType, RequestType> networkBoundResource(
 
 * Explanation 
 
-  * GENERIC FUNCTION
+  ### GENERIC FUNCTION
   * This is a generic function and that means it can work with any type of data,
    * ResultType is the data type loaded the local cache. Can be any thing, a list or any object.
    * RequestType is the data type loaded from the network. Can be any thing, a list or any object.
  
-  * ARGUMENT PARAMETERS
+  ### ARGUMENT PARAMETERS
    * This function takes in four argument parameters which are functions
+   * NOTE!!! -> all the paramEters are function implementations of the following pieces of logic
  
-  * NOTE!!! -> all the paramEters are function implementations of the following pieces of logic
- 
-  * query
+  ### query
    * pass in a function that loads data from your local cache and returns a flow of your specified data type <ResultType>
    * This function returns a Flow<ResultType>
-
- 
-  * fetch
+   
+  ### fetch
    * pass in a function, a suspend function, that loads data from your rest api and returns an object of <RequestType>
    * This function returns returns <RequestType>
 
  
-  * saveFetchResult
+  ### saveFetchResult
    * pass in a function that just takes in <RequestType> (The data type got from the network) and saves it in the local cache.
    * This function returns returns Unit
 
  
-  * shouldFetch 
+  ### shouldFetch 
    * This function returns a Boolean.
    * pass in a function that has the logic to whether the algorithm should make a networking call or not.
    * In this case, this function takes in data loaded from @param query and determines whether to make a networking call or not. This can vary with your implementation however, say fetch depending on the last time you made a networking call....e.t.c.
