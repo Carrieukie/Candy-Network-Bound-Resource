@@ -91,14 +91,13 @@ inline fun <ResultType, RequestType> networkBoundResource(
 ```
 ## Explanation 
 
-  ### GENERIC FUNCTION
+  ### This is a generic
   * This is a generic function and that means it can work with any type of data,
   * ResultType is the data type loaded the local cache. Can be any thing, a list or any object.
   * RequestType is the data type loaded from the network. Can be any thing, a list or any object.
  
   ### ARGUMENT PARAMETERS
-   * This function takes in four argument parameters which are functions
-   * NOTE!!! -> all the paramEters are function implementations of the following pieces of logic
+   * This function takes in four argument parameters which are functions.
  
   ### query
    * pass in a function that loads data from your local cache and returns a flow of your specified data type <ResultType>
@@ -133,12 +132,15 @@ class MainRepository @Inject constructor(
     private val weatherDao = database.charactersDao()
 
     fun getCandys() = networkBoundResource(
+   
         // pass in the logic to query data from the database
         query = {
             weatherDao.getCandy()
         },
         // pass in the logic to fetch data from the api
         fetch = {
+   
+            //This is to show a progress bar
             delay(2000)
             apiService.getCandy()
         },
