@@ -102,16 +102,16 @@ inline fun <ResultType, RequestType> networkBoundResource(
  
   ### query
    * This is a function that loads data from your local cache and returns a flow of your specified data type <ResultType>
-   * This function returns a Flow<ResultType>
+   * This function returns a Flow of ResultType.
    
   ### fetch
    * This is a suspend function, that loads data from your rest api and returns an object of <RequestType>
-   * This function returns returns <RequestType>
+   * This function returns RequestType.
 
  
   ### saveFetchResult
    * THis is a function that just takes in <RequestType> (The data type got from the network) and saves it in the local cache.
-   * This function returns returns Unit
+   * This function returns Unit.
 
  
   ### shouldFetch 
