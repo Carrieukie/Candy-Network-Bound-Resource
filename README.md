@@ -13,9 +13,6 @@ A relatively small and simple application that consumes this [api](https://vast-
     
 You can easily achieve the above use cases using this algorithm, by making just a few adjustments. It works well with the Android architecture component. 
 
-## Description
-* This simple application 
-
 ### Tech-stack
 
 * Tech-stack
