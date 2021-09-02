@@ -13,6 +13,23 @@ A relatively small and simple application that consumes this [api](https://vast-
     
 You can easily achieve the above use cases using this algorithm, by making just a few adjustments. It works well with the Android architecture component. 
 
+## Demo
+   * When the app is first launched. Shouldfetch returns true because there's no data in the local cache. Device has internet connection. Makes a network call and caches the data in the device.
+   
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/first_time.gif" width="320"/>
+
+   * When device is launched the second time. Shouldfetch returns false because there's data in the local cache. Device has internet connection.
+   
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/second_time.gif" width="320"/>
+
+   * When the device does not have an internet connection. shouldfetch returns false because there's data in the local cache. Device has no internet connection.
+   
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/airplane_mode.gif" width="320"/>
+   
+   * When your logic requires the app re-do the network request, even though you have data already cached in the db. The data cached is displayed as a placeholder, while data is being loaded.
+   
+      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/secondfetchrequired.gif" width="320"/>
+
 ### Tech-stack
 
 * Tech-stack
@@ -161,22 +178,7 @@ class MainRepository @Inject constructor(
     
  ```
 
-## Demo
-   * When the app is first launched. Shouldfetch returns true because there's no data in the local cache. Device has internet connection. Makes a network call and caches the data in the device.
-   
-      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/first_time.gif" width="320"/>
 
-   * When device is launched the second time. Shouldfetch returns false because there's data in the local cache. Device has internet connection.
-   
-      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/second_time.gif" width="320"/>
-
-   * When the device does not have an internet connection. shouldfetch returns false because there's data in the local cache. Device has no internet connection.
-   
-      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/airplane_mode.gif" width="320"/>
-   
-   * When your logic requires the app re-do the network request, even though you have data already cached in the db. The data cached is displayed as a placeholder, while data is being loaded.
-   
-      <img src="https://github.com/Carrieukie/Candy/blob/main/assets/secondfetchrequired.gif" width="320"/>
 
 
  # I hope you loved this 
