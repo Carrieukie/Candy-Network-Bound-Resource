@@ -9,7 +9,7 @@ A relatively small and simple application that consumes this [api](https://vast-
 
     * Display data from your cache when there's no internet.
        
-    * Display data from your cache as placeholder instead of a loading screen.
+    * Display data from your cache as placeholder instead of a loading screen as you fetch fresh data from the internet.
     
 You can easily achieve the above use cases using this algorithm, by making just a few adjustments. It works well with the Android architecture component. 
 
