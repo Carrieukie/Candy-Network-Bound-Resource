@@ -66,6 +66,26 @@
             app:layout_constraintStart_toStartOf="@+id/candy_list"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+        <ViewStub
+            android:id="@+id/emptyStateStub"
+            android:layout="@layout/view_empty_state"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <ViewStub
+            android:id="@+id/errorStateStub"
+            android:layout="@layout/view_error_state"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
