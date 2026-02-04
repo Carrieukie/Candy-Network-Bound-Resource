@@ -45,55 +45,47 @@ android {
 }
 
 dependencies {
+    // AndroidX Core
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
 
-    implementation 'androidx.core:core-ktx:1.15.0'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    // Lifecycle
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel.savedstate
 
-    // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.8.7"
+    // Fragments
+    implementation libs.androidx.fragment.ktx
 
-    //viewmodel saved state handle
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7"
+    // Hilt
+    implementation libs.hilt.android
+    implementation libs.androidx.legacy.support.v4
+    kapt libs.hilt.android.compiler
+    kapt libs.hilt.compiler
 
-    //Fragments
-    implementation 'androidx.fragment:fragment-ktx:1.8.5'
+    // Room
+    implementation libs.androidx.room.runtime
+    implementation libs.androidx.room.ktx
+    kapt libs.androidx.room.compiler
 
-    //Hilt
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    kapt "com.google.dagger:hilt-android-compiler:$kapt_hilt_version"
+    // Navigation
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
 
-    //Hilt Viewmodel
-    kapt "androidx.hilt:hilt-compiler:$hilt_viewmodel_version"
+    // Retrofit
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.gson
 
-    //Room
-    implementation "androidx.room:room-runtime:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+    // OkHttp
+    implementation libs.okhttp.logging.interceptor
 
-    def nav_version = "2.8.5"
+    // Glide
+    implementation libs.glide
+    kapt libs.glide.compiler
 
-    // Kotlin navigation components
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-
-
-    //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
-
-    //Gson
-    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
-
-    //LoggingInterceptor
-    implementation "com.squareup.okhttp3:logging-interceptor:4.12.0"
-
-    //Glide
-    implementation 'com.github.bumptech.glide:glide:4.16.0'
-    kapt 'com.github.bumptech.glide:compiler:4.16.0'
-
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // Testing
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
 }
